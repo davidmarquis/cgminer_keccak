@@ -316,10 +316,10 @@ static int crypto_hash( unsigned char *out, const unsigned char *in, unsigned in
 void Hash3(uint256 *pResult, unsigned char const *pbegin, unsigned char const *pend)
 {
 	uint256 hash1;
-	uint256 hash2;
+//	uint256 hash2;
 	crypto_hash((unsigned char*)&hash1, pbegin, (pend - pbegin) * sizeof(pbegin[0]));
-	crypto_hash((unsigned char*)&hash2, (unsigned char*)&hash1, sizeof(hash1));
-	*pResult = hash2;
+//	crypto_hash((unsigned char*)&hash2, (unsigned char*)&hash1, sizeof(hash1));
+	*pResult = hash1;
 }
 
 void keccak_regenhash(struct work *work)
